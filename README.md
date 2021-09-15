@@ -24,6 +24,9 @@
 })();
 ```
 
+### domain
+- `www.google.com`
+
 ## 2. Contentful Auto Login
 
 ```js
@@ -40,6 +43,9 @@
   }
 })();
 ```
+
+### domain
+- `be.contentful.com, www.contentful.com`
 
 ## 3. ホテル名コピー in GoogleTravel
 
@@ -61,6 +67,9 @@
 })();
 ```
 
+### domain
+- `www.google.com`
+
 ## 4. ホテル名コピー in Precious
 
 ```js
@@ -81,6 +90,9 @@
 })();
 ```
 
+### domain
+- `precious.jp`
+
 ## 5. 楽天GORA コースIDコピー in ゴルフラボ
 
 ```js
@@ -100,3 +112,6 @@
   document.body.removeChild(textarea);
 })();
 ```
+
+### domain
+- `www.golflab.jp`
