@@ -115,3 +115,23 @@
 
 ### domain
 - `www.golflab.jp`
+
+## 6. ホテルNoコピー in 楽天トラベル キーワード検索
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = document
+    .querySelector("#HotelNos")
+    .value.split(",")
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `kw.travel.rakuten.co.jp`
