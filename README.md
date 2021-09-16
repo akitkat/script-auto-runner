@@ -135,3 +135,26 @@
 
 ### domain
 - `kw.travel.rakuten.co.jp`
+
+## 7. ホテル名コピー in TravelBook
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "body > div.ptl > div > div > article > div.article.article__container > div.hotel-item-list.mbl.mtm > ul > li > div > a > div.topic-hotel-item__content.mbs > h3"
+    ),
+  ]
+    .map((e) => e.innerText)
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `www.travelbook.co.jp`
