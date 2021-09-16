@@ -158,3 +158,28 @@
 
 ### domain
 - `www.travelbook.co.jp`
+
+## 8. 楽天GORA コースIDコピー in kiki golfer
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "#article > div.post_content.clearfix > div > p > a"
+    ),
+  ]
+    .filter((e) => e.innerText.includes("楽天GORA"))
+    .map((e) => e.href.match(/.*c_id%2F(\d+).*/)[1])
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `kiki-golfer.com`
+
