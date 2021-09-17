@@ -183,3 +183,25 @@
 ### domain
 - `kiki-golfer.com`
 
+## 9. ホテルNoコピー in kiki journal4.net
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll("#nocopy > div.entry-content > div > a"),
+  ]
+    .filter((e) => e.href.match(/^https:\/\/hb.afl.rakuten.co.jp/))
+    .map(e=>e.href.match(/HOTEL%2F(\d+)/)[1])
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `journal4.net`
+
