@@ -183,7 +183,7 @@
 ### domain
 - `kiki-golfer.com`
 
-## 9. ホテルNoコピー in kiki journal4.net
+## 9. ホテルNoコピー in journal4
 
 ```js
 (() => {
