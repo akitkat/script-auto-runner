@@ -216,6 +216,7 @@
       "#gpointbody_qg > main > article > div.main-content > section.ranking-area > div > div.hotel-info > p.btn-lowest > a"
     ),
   ]
+    .filter((e) => e.href.match(/^https:\/\/hb.afl.rakuten.co.jp/))
     .map((e) => e.href.match(/plan%2F(\d+)/)[1])
     .join("\n");
 
