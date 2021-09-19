@@ -166,7 +166,7 @@
   const textarea = document.createElement("textarea");
   textarea.textContent = [
     ...document.querySelectorAll(
-      "#article > div.post_content.clearfix > div > p > a"
+      "#article > div.post_content.clearfix p a"
     ),
   ]
     .filter((e) => e.innerText.includes("楽天GORA"))
