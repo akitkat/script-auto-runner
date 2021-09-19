@@ -205,3 +205,27 @@
 ### domain
 - `journal4.net`
 
+
+## 10. ホテルNoコピー in travel gpoint
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "#gpointbody_qg > main > article > div.main-content > section.ranking-area > div > div.hotel-info > p.btn-lowest > a"
+    ),
+  ]
+    .map((e) => e.href.match(/plan%2F(\d+)/)[1])
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `travel.gpoint.co.jp`
+
