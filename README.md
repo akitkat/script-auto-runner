@@ -170,7 +170,7 @@
     ),
   ]
     .filter((e) => e.innerText.includes("楽天GORA"))
-    .map((e) => e.href.match(/.*c_id%2F(\d+).*/)[1])
+    .map((e) => e.href.match(/.*c_id%2F(\d+).*/)?.[1])
     .join("\n");
 
   document.body.appendChild(textarea);
