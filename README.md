@@ -205,7 +205,6 @@
 ### domain
 - `journal4.net`
 
-
 ## 10. ホテルNoコピー in travel gpoint
 
 ```js
@@ -229,4 +228,24 @@
 
 ### domain
 - `travel.gpoint.co.jp`
+
+## 11. ホテルNoコピー in IiSENTAKU
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [...document.querySelectorAll("#center01 > div a")]
+    .filter((e) => e.href.includes("rakuten"))
+    .map((e) => e.href.match(/%2F(\d+)\.html$/)[1])
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `www.be2to.com`
 
