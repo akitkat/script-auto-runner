@@ -271,3 +271,27 @@
 
 ### domain
 - `www.ikyu.com`
+
+## 13. ホテルNoコピー in icotto
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "#js-presses > div.l-container > article > div > div.l-container--sticky > section > div > div > div > div > div.p-presses-show-spot__container--left > dl > dd > a"
+    ),
+  ]
+    .filter((e) => e.href.includes("rakuten"))
+    .map((e) => e.href.match(/252FHOTEL%252F(\d+)/)[1])
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `icotto.jp`
