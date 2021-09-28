@@ -249,3 +249,25 @@
 ### domain
 - `www.be2to.com`
 
+## 12. ホテル名コピー in ikyu
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "#ga-article_plugin div.bottom-of-ikyu-plugin > h3"
+    ),
+  ]
+    .map((e) => e.innerText)
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `www.ikyu.com`
