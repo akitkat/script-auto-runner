@@ -295,3 +295,35 @@
 
 ### domain
 - `icotto.jp`
+
+
+## 14. 楽天市場itemCodeコピー 
+
+```js
+(() => {
+  const textarea = document.createElement("textarea");
+  textarea.textContent = [
+    ...document.querySelectorAll(
+      "#root > div.dui-container.main > div.dui-container.content > div.dui-container.searchresults > div > div"
+    ),
+  ]
+    .filter((e) => e.querySelector("div.content.merchant._ellipsis > a"))
+    .map(
+      (e) =>
+        `${
+          e
+            .querySelector("div.content.merchant._ellipsis > a")
+            .href.split("/")[3]
+        }:${e.dataset.id}`
+    )
+    .join("\n");
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+})();
+```
+
+### domain
+- `search.rakuten.co.jp`
